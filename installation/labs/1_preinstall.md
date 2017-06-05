@@ -1,7 +1,7 @@
 # Lab 01
 _*Note: For managing the five nodes, I use parallel SSH from a small jumpnode. In the output, I only show the first of the results while running the commands. This first result might not always be node01.*_
 
-## Check vm.swappiness on all your nodes
+## 1. Check vm.swappiness on all your nodes
 Check the current value:
 ```
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /proc/sys/vm/swappiness"
@@ -22,7 +22,7 @@ Verify the new value:
 1
 ```
 
-## Show the mount attributes of all volumes
+## 2. Show the mount attributes of all volumes
 ```
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /etc/fstab"
 [1] 15:00:57 [SUCCESS] 10.1.1.103
@@ -33,7 +33,7 @@ proc       /proc     proc    defaults         0 0
 sysfs      /sys      sysfs   defaults         0 0
 ```
 
-## Show the reserve space of any non-root, ext-based volumes
+## 3. Show the reserve space of any non-root, ext-based volumes
 Showing all disks and partitions:
 ```
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "df -h"
@@ -43,7 +43,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 tmpfs           7.4G     0  7.4G   0% /dev/shm
 ```
 
-## Disable transparent hugepage support
+## 4. Disable transparent hugepage support
 Since the hugepage folder was non existing, I was not able to run the command successfully:
 ```
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "ls /sys/kernel/mm/"
@@ -64,7 +64,7 @@ pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "echo 'never' > /sy
 Stderr: bash: /sys/kernel/mm/redhat_transparent_hugepage/defrag: No such file or directory
 ```
 
-## List your network interface configuration
+## 5. List your network interface configuration
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "ip addr"
 [1] 13:56:33 [SUCCESS] 10.1.1.101
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN
@@ -79,7 +79,7 @@ Stderr: bash: /sys/kernel/mm/redhat_transparent_hugepage/defrag: No such file or
        valid_lft forever preferred_lft forever
 
 
-## List forward and reverse host lookups using getent or nslookup
+## 6. List forward and reverse host lookups using getent or nslookup
 Install nslookup:
 ```
 yum -y install bind-utils
@@ -96,7 +96,7 @@ Name: www.google.com
 Address: 209.85.203.103
 ```
 
-## Show the nscd service is running
+## 7 Show the nscd service is running
 Install the nscd service:
 ```
 yum -y install nscd
@@ -122,7 +122,7 @@ Make sure the service starts upon reboot:
 [1] 14:02:04 [SUCCESS] 10.1.1.101
 ```
 
-## Show the ntpd service is running
+## 8. Show the ntpd service is running
 Install the ntpd service:
 ```
 yum -y install ntp
