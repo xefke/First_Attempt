@@ -1,32 +1,22 @@
 # Lab 01
-## Check vm.swappiness on all your nodes
+*Note:* For managing the five nodes, I use parallel SSH from a small jumpnode. In the output, I only show the first of the results while running the commands. This first result might not always be node01.
 
-`[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /proc/sys/vm/swappiness"
+## Check vm.swappiness on all your nodes
+Check the current value
+```
+[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /proc/sys/vm/swappiness"
 [1] 13:36:31 [SUCCESS] 10.1.1.101
 60
-[2] 13:36:31 [SUCCESS] 10.1.1.103
-60
-[3] 13:36:31 [SUCCESS] 10.1.1.102
-60
-[4] 13:36:31 [SUCCESS] 10.1.1.104
-60
-[5] 13:36:31 [SUCCESS] 10.1.1.105
-60`
-
+```
+Update the value:
 ```
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "sysctl -w vm.swappiness=1"
 [1] 13:36:27 [SUCCESS] 10.1.1.103
 vm.swappiness = 1
-[2] 13:36:27 [SUCCESS] 10.1.1.101
-vm.swappiness = 1
-[3] 13:36:27 [SUCCESS] 10.1.1.102
-vm.swappiness = 1
-[4] 13:36:27 [SUCCESS] 10.1.1.104
-vm.swappiness = 1
-[5] 13:36:27 [SUCCESS] 10.1.1.105
-vm.swappiness = 1
 ```
 
+Verify the new value:
+```
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /proc/sys/vm/swappiness"
 [1] 13:36:31 [SUCCESS] 10.1.1.101
 1
@@ -38,30 +28,18 @@ vm.swappiness = 1
 1
 [5] 13:36:31 [SUCCESS] 10.1.1.105
 1
-
+```
 
 ## Show the mount attributes of all volumes
-[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "df -h"
-[1] 13:43:34 [SUCCESS] 10.1.1.101
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/xvde       126G  662M  119G   1% /
-tmpfs           7.4G     0  7.4G   0% /dev/shm
-[2] 13:43:34 [SUCCESS] 10.1.1.102
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/xvde       126G  662M  119G   1% /
-tmpfs           7.4G     0  7.4G   0% /dev/shm
-[3] 13:43:34 [SUCCESS] 10.1.1.103
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/xvde       126G  662M  119G   1% /
-tmpfs           7.4G     0  7.4G   0% /dev/shm
-[4] 13:43:34 [SUCCESS] 10.1.1.105
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/xvde       126G  662M  119G   1% /
-tmpfs           7.4G     0  7.4G   0% /dev/shm
-[5] 13:43:34 [SUCCESS] 10.1.1.104
-Filesystem      Size  Used Avail Use% Mounted on
-/dev/xvde       126G  662M  119G   1% /
-tmpfs           7.4G     0  7.4G   0% /dev/shm
+
+[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /etc/fstab"
+[1] 15:00:57 [SUCCESS] 10.1.1.103
+LABEL=centos_root   /        ext4      defaults         0 0
+devpts     /dev/pts  devpts  gid=5,mode=620   0 0
+tmpfs      /dev/shm  tmpfs   defaults         0 0
+proc       /proc     proc    defaults         0 0
+sysfs      /sys      sysfs   defaults         0 0
+
 
 ## Show the reserve space of any non-root, ext-based volumes
 * XFS volumes do not maintain reserve space
