@@ -65,6 +65,7 @@ Stderr: bash: /sys/kernel/mm/redhat_transparent_hugepage/defrag: No such file or
 ```
 
 ## 5. List your network interface configuration
+```
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "ip addr"
 [1] 13:56:33 [SUCCESS] 10.1.1.101
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN
@@ -77,16 +78,16 @@ Stderr: bash: /sys/kernel/mm/redhat_transparent_hugepage/defrag: No such file or
     inet 10.1.1.101/24 brd 10.1.1.255 scope global eth0
     inet6 fe80::871:f8ff:fe7e:d9ca/64 scope link
        valid_lft forever preferred_lft forever
-
+```
 
 ## 6. List forward and reverse host lookups using getent or nslookup
 Install nslookup:
 ```
-yum -y install bind-utils
+[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "yum -y install bind-utils"
 ```
 Test the install:
 ```
-pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "nslookup www.google.com"
+[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "nslookup www.google.com"
 [5] 15:18:38 [SUCCESS] 10.1.1.105
 Server:   10.1.1.2
 Address:  10.1.1.2#53
@@ -99,7 +100,7 @@ Address: 209.85.203.103
 ## 7 Show the nscd service is running
 Install the nscd service:
 ```
-yum -y install nscd
+[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "yum -y install nscd"
 ```
 
 Start the service:
@@ -125,7 +126,7 @@ Make sure the service starts upon reboot:
 ## 8. Show the ntpd service is running
 Install the ntpd service:
 ```
-yum -y install ntp
+[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "yum -y install ntp"
 ```
 
 Start the service:
