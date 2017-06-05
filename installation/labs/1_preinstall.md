@@ -1,7 +1,7 @@
 # Lab 01
 ## Check vm.swappiness on all your nodes
 
-[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /proc/sys/vm/swappiness"
+`[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /proc/sys/vm/swappiness"`
 [1] 13:36:31 [SUCCESS] 10.1.1.101
 60
 [2] 13:36:31 [SUCCESS] 10.1.1.103
@@ -13,7 +13,7 @@
 [5] 13:36:31 [SUCCESS] 10.1.1.105
 60
 
-[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "sysctl -w vm.swappiness=1"
+`[root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "sysctl -w vm.swappiness=1"
 [1] 13:36:27 [SUCCESS] 10.1.1.103
 vm.swappiness = 1
 [2] 13:36:27 [SUCCESS] 10.1.1.101
@@ -23,7 +23,7 @@ vm.swappiness = 1
 [4] 13:36:27 [SUCCESS] 10.1.1.104
 vm.swappiness = 1
 [5] 13:36:27 [SUCCESS] 10.1.1.105
-vm.swappiness = 1
+vm.swappiness = 1`
 
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /proc/sys/vm/swappiness"
 [1] 13:36:31 [SUCCESS] 10.1.1.101
@@ -39,7 +39,6 @@ vm.swappiness = 1
 
 
 ## Show the mount attributes of all volumes
-
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "df -h"
 [1] 13:43:34 [SUCCESS] 10.1.1.101
 Filesystem      Size  Used Avail Use% Mounted on
