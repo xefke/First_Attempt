@@ -8,14 +8,17 @@ HADOOP=/opt/cloudera/parcels/CDH/bin
 echo Testing loop started on `date`
 
 # Mapper containers
-for i in 8    
+for i in 2    
 do
+  echo Number of Mappers ${i}
    # Reducer containers
-   for j in 1 
-   do                 
+   for j in 2 
+   do
+    echo Number of Reducers ${j}              
       # Container memory
-      for k in 512 1024 
-      do                         
+      for k in 512
+      do
+        echo Container Memory Size ${k}                        
          # Set mapper JVM heap 
          MAP_MB=`echo "($k*0.8)/1" | bc` 
 
