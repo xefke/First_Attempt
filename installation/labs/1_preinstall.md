@@ -22,7 +22,7 @@ Verify the new value:
 1
 ```
 
-## 2. Show the mount attributes of all volumes
+## 2. Show the mount attributes of all volumes
 ```
 [root@ip-10-1-1-100 ~]# pssh -h "nodes.txt" -l root -i "-O StrictHostKeyChecking=no" "cat /etc/fstab"
 [1] 15:00:57 [SUCCESS] 10.1.1.103
