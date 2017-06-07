@@ -2,8 +2,14 @@
 
 ## Report the latest available version of the API
 The latest version is v14
+
+Command:
 ```
 curl -u admin:***** http://node01.sebc:7180/api/v14/clusters/
+```
+
+Result:
+```
 {
   "items" : [ {
     "name" : "cluster",
@@ -56,3 +62,15 @@ Result:
 ```
 
 ## Report the database server in use by CM
+Command:
+```
+curl -u admin:sebcadmin http://node01.sebc:7180/api/v14/cm/scmDbInfo
+```
+
+Result:
+```
+{
+  "scmDbType" : "MYSQL",
+  "embeddedDbUsed" : false
+}
+```
