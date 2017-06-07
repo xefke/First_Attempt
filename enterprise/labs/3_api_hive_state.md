@@ -11,7 +11,7 @@ curl -X POST -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/servic
 
 Start:
 ```
-curl -X POST -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/stop
+curl -X POST -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/start
 ```
 
 Follow Process:
