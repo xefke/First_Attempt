@@ -13,12 +13,12 @@ Four parameters can be set:
 
 ## Where in CM is the Kerberos Security Realm value displayed?
 * Administration > Settings > Kerberos
-..* Kerberso Security Realm
+  * Kerberos Security Realm
 
 Other location:
 There are multiple locations:
 * HDFS > Configuration > Security
-..* Trusted Kerberos Realms: shows all trusted realms if configured
+  * Trusted Kerberos Realms: shows all trusted realms if configured
 
 ## Which CDH service(s) host a property for enabling Kerberos authentication?
 This is done on cluster level. Use the drop-down list next to the cluster name and select "Enable Kerberos".
@@ -39,21 +39,21 @@ select cpu_system_rate + cpu_user_rate where category=ROLE and serviceName=$SERV
 
 ## What steps must be completed before integrating Cloudera Manager with Kerberos?
 1. Make sure you have a working kerberos realm and KDC on the cluster machines
-..* Installed krb5server on Kerberos server
-..* Installed packages openldap-clients on the CM Server hosts
-..* Installed krb5-workstation, krb5-libs on all hosts
+* Installed krb5server on Kerberos server
+* Installed packages openldap-clients on the CM Server hosts
+* Installed krb5-workstation, krb5-libs on all hosts
 
-..* Edited the krb5.conf file to work
-..* Edited the kdc.conf file to work
+* Edited the krb5.conf file to work
+* Edited the kdc.conf file to work
 
-..* Created KDC Database
-..* Add ACLs to ACL File
+* Created KDC Database
+* Add ACLs to ACL File
 
 2. Add Administrator principals
-..* for cloudera-scm
-..* for cloudera
-..* for your hdfs superuser account
-..* for each user account
+* for cloudera-scm
+* for cloudera
+* for your hdfs superuser account
+* for each user account
 
 3. Started Kerberos
 
