@@ -2,28 +2,28 @@
 ## Summary
 Status:
 ```
-curl -u admin:sebcadmin http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive
+curl -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive
 ```
 Stop:
 ```
-curl -X POST -u admin:sebcadmin http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/stop
+curl -X POST -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/stop
 ```
 
 Start:
 ```
-curl -X POST -u admin:sebcadmin http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/stop
+curl -X POST -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/stop
 ```
 
 Follow Process:
 ```
-curl -u admin:sebcadmin http://node01.sebc:7180/api/v1/ccommands/<pid>
+curl -u admin:***** http://node01.sebc:7180/api/v1/ccommands/<pid>
 ```
 
 ## Detail
 ### Get the HIVE Service status
 Command:
 ```
-curl -u admin:sebcadmin http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive
+curl -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive
 ```
 Result:
 ```
@@ -50,7 +50,7 @@ Result:
 ### Stop the HIVE Service
 Command:
 ```
-curl -X POST -u admin:sebcadmin http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/stop
+curl -X POST -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/stop
 ```
 Result:
 ```
@@ -68,7 +68,7 @@ Result:
 
 #### Follow the command:
 ```
-curl -u admin:sebcadmin http://node01.sebc:7180/api/v1/commands/298
+curl -u admin:***** http://node01.sebc:7180/api/v1/commands/298
 ```
 Result:
 ```
@@ -127,7 +127,7 @@ Result:
 ### Get the HIVE Service status
 Command:
 ```
-curl -u admin:sebcadmin http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive
+curl -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive
 ```
 Result:
 ```
@@ -154,7 +154,7 @@ Result:
 ### Start the HIVE Service
 Command:
 ```
-curl -X POST -u admin:sebcadmin http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/start
+curl -X POST -u admin:***** http://node01.sebc:7180/api/v1/clusters/Xefke/services/hive/commands/start
 ```
 Result:
 ```

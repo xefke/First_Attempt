@@ -1,8 +1,9 @@
 # Cloudera Manager API Result
+Command:
 ```
 curl -u admin:****  http://node01.sebc:7180/api/v2/cm/deployment
 ```
-
+Result:
 ```
 {
   "timestamp" : "2017-06-07T10:28:25.397Z",
