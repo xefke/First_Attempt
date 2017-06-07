@@ -39,21 +39,21 @@ select cpu_system_rate + cpu_user_rate where category=ROLE and serviceName=$SERV
 
 ## What steps must be completed before integrating Cloudera Manager with Kerberos?
 1. Make sure you have a working kerberos realm and KDC on the cluster machines
-* Installed krb5server on Kerberos server
-* Installed packages openldap-clients on the CM Server hosts
-* Installed krb5-workstation, krb5-libs on all hosts
+  * Installed krb5server on Kerberos server
+  * Installed packages openldap-clients on the CM Server hosts
+  * Installed krb5-workstation, krb5-libs on all hosts
 
-* Edited the krb5.conf file to work
-* Edited the kdc.conf file to work
+  * Edited the krb5.conf file to work 
+  * Edited the kdc.conf file to work
 
-* Created KDC Database
-* Add ACLs to ACL File
+  * Created KDC Database
+  * Add ACLs to ACL File
 
 2. Add Administrator principals
-* for cloudera-scm
-* for cloudera
-* for your hdfs superuser account
-* for each user account
+  * for cloudera-scm
+  * for cloudera 
+  * for your hdfs superuser account
+  * for each user account
 
 3. Started Kerberos
 
