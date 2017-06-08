@@ -19,6 +19,7 @@ Result:
  ticket_lifetime = 24h
  renew_lifetime = 7d
  forwardable = true
+ udp_preference_limit = 1
 
 [realms]
  SEBC = {
