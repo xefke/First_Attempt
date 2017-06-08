@@ -133,6 +133,7 @@ ferdinand:x:1200:502::/home/ferdinand:/bin/bash
 ferdinand:x:1200:502::/home/ferdinand:/bin/bash
 [5] 12:42:32 [SUCCESS] 10.1.1.104
 ferdinand:x:1200:502::/home/ferdinand:/bin/bash
+```
 
 ## Create principals
 ```
