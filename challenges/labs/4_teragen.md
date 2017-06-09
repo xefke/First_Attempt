@@ -5,9 +5,11 @@ sudo -u theresa time /opt/cloudera/parcels/CDH/bin/hadoop jar /opt/cloudera/parc
 ```
 
 ## Time output
+```
 real	1m28.108s
 user	0m6.059s
 sym 	0m0.661s
+```
 
 ## HDFS Output
 `[root@node201 ~]# sudo -u theresa hdfs dfs -ls /user/theresa/tgen512m`
