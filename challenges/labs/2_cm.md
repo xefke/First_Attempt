@@ -90,3 +90,4 @@ Executing:  /usr/java/jdk1.7.0_67-cloudera/bin/java -cp /usr/share/java/mysql-co
 2017-06-09 09:21:51,119 [main] INFO  com.cloudera.enterprise.dbutil.DbCommandExecutor  - Successfully connected to database.
 All done, your SCM database is configured correctly!
 ```
+.
